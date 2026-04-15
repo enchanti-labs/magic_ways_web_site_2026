@@ -1,12 +1,15 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useLocation, useNavigate, Link } from 'react-router-dom';
 import logoDark from '@/assets/logo-dark.png';
 import logoWhite from '@/assets/logo-white.png';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,15 +26,27 @@ const Navbar = () => {
     { name: 'Estadísticas', href: '#estadisticas' },
     { name: 'Experiencias', href: '#experiencias' },
     { name: 'FAQ', href: '#faq' },
+    { name: 'Blog', href: '/blog' },
     { name: 'Contacto', href: '#contacto' }
   ];
 
   const scrollToSection = (href: string) => {
+    setIsMenuOpen(false);
+    
+    if (href.startsWith('/')) {
+      navigate(href);
+      return;
+    }
+
+    if (location.pathname !== '/') {
+      navigate('/' + href);
+      return;
+    }
+
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
-    setIsMenuOpen(false);
   };
 
   return (
@@ -69,6 +84,17 @@ const Navbar = () => {
                 {item.name}
               </button>
             ))}
+            <Link to="/registrar-negocio">
+              <Button 
+                variant={isScrolled ? "default" : "outline"}
+                className={isScrolled 
+                  ? "" 
+                  : "bg-transparent text-white border-white hover:bg-white hover:!text-primary-dark transition-colors duration-300"
+                }
+              >
+                Registrar Negocio
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -95,6 +121,13 @@ const Navbar = () => {
                   {item.name}
                 </button>
               ))}
+              <div className="px-4 py-4">
+                <Link to="/registrar-negocio" onClick={() => setIsMenuOpen(false)}>
+                  <Button className="w-full bg-primary text-white hover:bg-primary/90">
+                    Registrar Negocio
+                  </Button>
+                </Link>
+              </div>
             </div>
           </div>
         )}

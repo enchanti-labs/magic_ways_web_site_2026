@@ -92,38 +92,46 @@ const StatsSection = () => {
   };
 
   return (
-    <section id="estadisticas" ref={sectionRef} className="py-20 bg-accent/20">
-      <div className="container mx-auto px-4">
+    <section id="estadisticas" ref={sectionRef} className="py-16 md:py-24 bg-zinc-950 rounded-b-[60px] md:rounded-b-[100px] relative z-40 overflow-hidden">
+      <div className="absolute top-0 left-0 w-full h-full opacity-30 pointer-events-none">
+        <div className="absolute top-[-10%] right-[-10%] w-[50%] h-[50%] bg-primary/20 blur-[150px] rounded-full" />
+        <div className="absolute bottom-[-10%] left-[-10%] w-[50%] h-[50%] bg-gold/10 blur-[150px] rounded-full" />
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16 reveal-on-scroll">
-          <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-foreground">
-            Nuestro <span className="text-primary">Impacto</span>
+          <h2 className="text-4xl md:text-6xl font-heading font-black mb-6 text-white leading-tight">
+            Nuestro <br />
+            <span className="text-primary italic">Impacto</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Números que reflejan el crecimiento de Magic Ways y el impacto positivo 
-            en el turismo y las comunidades locales de México.
+          <p className="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto leading-relaxed">
+            Números que reflejan el crecimiento de Magic Ways y nuestro impacto positivo 
+            en las comunidades locales de México.
           </p>
         </div>
 
         {/* Stats Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {stats.map((stat, index) => {
             const animatedCount = useAnimatedCounter(stat.number, 2500 + index * 200);
             
             return (
-              <Card key={index} className="text-center hover-lift shadow-card reveal-on-scroll">
-                <CardContent className="p-8">
-                  <div className={`w-20 h-20 ${stat.bgColor} rounded-2xl flex items-center justify-center mx-auto mb-6`}>
-                    <span className={`text-3xl font-bold ${stat.color}`}>
+              <Card key={index} className="border-0 rounded-[2.5rem] shadow-2xl bg-white/5 backdrop-blur-xl border border-white/10 hover:translate-y-[-8px] transition-smooth group reveal-on-scroll overflow-hidden">
+                <CardContent className="p-8 text-center relative overflow-hidden">
+                  <div className={`absolute top-0 left-0 w-full h-1 ${stat.color.replace('text-', 'bg-')}`} />
+                  
+                  <div className="mb-4 relative">
+                    <span className={`text-5xl md:text-6xl font-black block tracking-tighter ${stat.color} group-hover:scale-110 transition-transform duration-500`}>
                       {formatNumber(animatedCount, stat.number)}
                     </span>
                   </div>
                   
-                  <h3 className="text-2xl font-heading font-bold mb-2 text-foreground">
+                  <h3 className="text-lg font-bold mb-1 text-white uppercase tracking-widest">
                     {stat.label}
                   </h3>
                   
-                  <p className="text-muted-foreground text-sm">
+                  <p className="text-zinc-500 text-sm font-medium">
                     {stat.description}
                   </p>
                 </CardContent>
@@ -134,14 +142,16 @@ const StatsSection = () => {
 
         {/* Additional Impact Info */}
         <div className="mt-16 text-center reveal-on-scroll">
-          <div className="bg-gradient-to-r from-primary/10 via-gold/10 to-emerald/10 rounded-3xl p-12">
-            <h3 className="text-2xl font-heading font-bold mb-4 text-foreground">
+          <div className="bg-white/5 backdrop-blur-xl rounded-[3rem] p-8 md:p-12 border border-white/10 shadow-2xl relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-primary/5 opacity-50" />
+            
+            <h3 className="text-2xl md:text-3xl font-heading font-black mb-6 text-white tracking-tight relative z-10">
               Construyendo puentes entre viajeros y comunidades
             </h3>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Cada interacción en Magic Ways contribuye al crecimiento económico sostenible 
+            <p className="text-lg md:text-xl text-zinc-400 max-w-4xl mx-auto leading-relaxed relative z-10 font-medium">
+              Cada interacción en <span className="text-white font-black">Magic Ways</span> contribuye al crecimiento económico sostenible 
               de los Pueblos Mágicos, preservando tradiciones culturales y generando oportunidades 
-              de desarrollo para las comunidades locales.
+              reales para las comunidades locales.
             </p>
           </div>
         </div>

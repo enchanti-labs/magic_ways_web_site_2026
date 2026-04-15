@@ -21,44 +21,45 @@ const HowItWorksSection = () => {
     icon: Heart,
     title: 'Disfruta experiencias únicas',
     description: 'Vive momentos inolvidables mientras apoyas directamente a comercios y comunidades locales.',
-    color: 'bg-emerald',
-    textColor: 'text-emerald-foreground'
+    color: 'bg-pink-500',
+    textColor: 'text-white'
   }];
-  return <section className="py-20 bg-accent/20">
+  return    <section id="como-funciona" className="py-16 md:py-24 bg-[#f2f3ff] rounded-b-[60px] md:rounded-b-[100px] relative z-40 overflow-hidden">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center mb-16 reveal-on-scroll">
-          <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-foreground">
-            ¿Cómo <span className="text-primary">funciona</span>?
+        <div className="text-center mb-12 reveal-on-scroll">
+          <h2 className="text-4xl md:text-6xl font-heading font-black mb-6 text-zinc-900 leading-tight">
+            ¿Cómo <br />
+            <span className="text-primary italic">funciona?</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-zinc-600 max-w-2xl mx-auto leading-relaxed">
             Comenzar tu aventura por los Pueblos Mágicos de México es muy fácil. 
             Solo sigue estos tres simples pasos.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content - Steps */}
-          <div className="space-y-8 reveal-on-scroll">
+          <div className="space-y-6 reveal-on-scroll">
             {steps.map((stepItem, index) => {
             const Icon = stepItem.icon;
-            return <Card key={index} className="overflow-hidden shadow-card hover-lift">
-                  <CardContent className="p-0">
-                    <div className="flex items-center">
+            return <Card key={index} className="border-0 rounded-[2.5rem] shadow-2xl hover:translate-y-[-5px] transition-smooth group bg-white overflow-hidden">
+                  <CardContent className="p-1.5">
+                    <div className="flex flex-col md:flex-row items-center">
                       {/* Step Number and Icon */}
-                      <div className={`${stepItem.color} p-8 flex flex-col items-center justify-center min-w-[120px]`}>
-                        <div className="text-4xl font-bold mb-2 opacity-90">
+                      <div className={`${stepItem.color} w-24 h-24 md:w-32 md:h-32 rounded-[2rem] p-6 flex flex-col items-center justify-center m-1.5 group-hover:scale-105 transition-transform duration-500`}>
+                        <div className="text-3xl font-black mb-1 opacity-90">
                           <span className={stepItem.textColor}>0{stepItem.step}</span>
                         </div>
-                        <Icon size={32} className={stepItem.textColor} />
+                        <Icon size={24} className={stepItem.textColor} />
                       </div>
 
                       {/* Content */}
-                      <div className="p-8 flex-1">
-                        <h3 className="text-xl font-heading font-bold mb-3 text-foreground">
+                      <div className="p-6 md:p-8 flex-1">
+                        <h3 className="text-xl font-black mb-2 text-zinc-900 leading-tight group-hover:text-primary transition-colors">
                           {stepItem.title}
                         </h3>
-                        <p className="text-muted-foreground leading-relaxed">
+                        <p className="text-zinc-500 leading-relaxed text-base">
                           {stepItem.description}
                         </p>
                       </div>
@@ -70,35 +71,32 @@ const HowItWorksSection = () => {
 
           {/* Right Content - Phone Mockup */}
           <div className="flex justify-center lg:justify-end reveal-on-scroll">
-            <div className="relative">
+            <div className="relative group">
+              <div className="absolute inset-0 bg-primary/20 blur-[120px] rounded-full opacity-50 group-hover:opacity-70 transition-opacity animate-pulse" />
+              
               {/* Main Phone */}
-              <div className="animate-float">
-                <img src={appMockup} alt="Magic Ways App Process" className="w-80 h-auto max-w-full drop-shadow-2xl" />
+              <div className="relative z-10 animate-float">
+                <img 
+                  src={appMockup} 
+                  alt="Magic Ways App Process" 
+                  className="w-80 md:w-96 h-auto max-w-full drop-shadow-[0_35px_35px_rgba(0,0,0,0.3)] transform transition-smooth group-hover:scale-105" 
+                />
               </div>
 
               {/* Floating Elements */}
-              <div className="absolute -top-8 -left-8 w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center animate-pulse">
-                <Download size={24} className="text-primary" />
+              <div className="absolute -top-6 -left-6 w-20 h-20 bg-white shadow-2xl rounded-3xl flex items-center justify-center animate-float z-20" style={{ animationDelay: '0.5s' }}>
+                <Download size={28} className="text-primary" />
               </div>
 
-              <div className="absolute top-1/2 -right-12 w-16 h-16 bg-gold/10 rounded-2xl flex items-center justify-center animate-pulse">
-                <Search size={24} className="text-gold" />
+              <div className="absolute top-1/2 -right-8 w-20 h-20 bg-white shadow-2xl rounded-3xl flex items-center justify-center animate-float z-20" style={{ animationDelay: '1s' }}>
+                <Search size={28} className="text-orange-500" />
               </div>
 
-              <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-emerald/10 rounded-2xl flex items-center justify-center animate-pulse">
-                <Heart size={24} className="text-emerald" />
+              <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 w-20 h-20 bg-white shadow-2xl rounded-3xl flex items-center justify-center animate-float z-20" style={{ animationDelay: '1.5s' }}>
+                <Heart size={28} className="text-pink-500" />
               </div>
-
-              {/* Connecting Lines */}
-              <div className="absolute top-8 left-8 w-px h-24 bg-gradient-to-b from-primary/50 to-transparent"></div>
-              <div className="absolute top-32 left-8 w-px h-24 bg-gradient-to-b from-gold/50 to-transparent"></div>
             </div>
           </div>
-        </div>
-
-        {/* Bottom CTA */}
-        <div className="mt-16 text-center reveal-on-scroll">
-          
         </div>
       </div>
     </section>;

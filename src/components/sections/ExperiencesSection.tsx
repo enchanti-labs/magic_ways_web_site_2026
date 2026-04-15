@@ -1,88 +1,60 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, MapPin, Clock, Star } from 'lucide-react';
-import oaxacaImg from '@/assets/destination-oaxaca.jpg';
-import guanajuatoImg from '@/assets/destination-guanajuato.jpg';
+import { ArrowRight, MapPin, Calendar, Star } from 'lucide-react';
+import festivitiesData from '@/assets/jsons/festivities.json';
 
 const ExperiencesSection = () => {
-  const experiences = [
-    {
-      title: 'Mercados de San Cristóbal de las Casas',
-      location: 'Chiapas',
-      image: oaxacaImg,
-      duration: '3-4 horas',
-      rating: 4.8,
-      description: 'Sumérgete en los colores, aromas y sabores de los mercados tradicionales indígenas. Conoce artesanos locales, prueba café chiapaneco auténtico y descubre textiles únicos elaborados con técnicas ancestrales.',
-      highlights: ['Textiles artesanales', 'Café de especialidad', 'Cultura tzotzil']
-    },
-    {
-      title: 'Talleres de Talavera en Puebla',
-      location: 'Puebla',
-      image: guanajuatoImg,
-      duration: '2-3 horas', 
-      rating: 4.9,
-      description: 'Aprende el arte centenario de la cerámica de talavera directamente de maestros artesanos. Crea tu propia pieza mientras descubres los secretos de esta tradición reconocida como Patrimonio Cultural Inmaterial.',
-      highlights: ['Arte tradicional', 'Taller práctico', 'Certificado UNESCO']
-    },
-    {
-      title: 'Recorrido Gastronómico en Oaxaca',
-      location: 'Oaxaca',
-      image: oaxacaImg,
-      duration: '4-5 horas',
-      rating: 4.7,
-      description: 'Explora la cocina oaxaqueña en mercados locales, restaurantes familiares y cocinas tradicionales. Degusta moles auténticos, quesos artesanales, mezcal y aprende sobre ingredientes prehispánicos únicos.',
-      highlights: ['7 tipos de mole', 'Mezcal tradicional', 'Ingredientes nativos']
-    },
-    {
-      title: 'Túneles Subterráneos de Guanajuato',
-      location: 'Guanajuato',
-      image: guanajuatoImg,
-      duration: '1.5-2 horas',
-      rating: 4.6,
-      description: 'Descubre la fascinante red de túneles que conecta el centro histórico. Conoce la historia minera de la ciudad, leyendas locales y arquitectura única mientras caminas por estos pasajes subterráneos.',
-      highlights: ['Historia minera', 'Arquitectura única', 'Leyendas locales']
-    }
-  ];
+  // Use the first 4 festivities for the highlights section
+  const experiences = festivitiesData.slice(0, 4).map(festivity => ({
+    title: festivity.name,
+    location: festivity.townName,
+    image: festivity.imageUrl || "/placeholder.svg",
+    date: `${festivity.day} de ${festivity.month}`,
+    rating: 4.9,
+    description: festivity.description,
+    highlights: ['Cultura local', 'Tradición', 'Evento único']
+  }));
 
   return (
-    <section id="experiencias" className="py-20 bg-background">
+    <section id="experiencias" className="py-16 md:py-24 bg-[#ffeef5] rounded-b-[60px] md:rounded-b-[100px] relative z-30 overflow-hidden">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center mb-16 reveal-on-scroll">
-          <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-foreground">
-            Experiencias <span className="text-primary">Destacadas</span>
+        <div className="text-center mb-12 reveal-on-scroll">
+          <h2 className="text-4xl md:text-6xl font-heading font-black mb-6 text-zinc-900 leading-tight">
+            Momentos <br />
+            <span className="text-primary italic">Inolvidables</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-zinc-600 max-w-3xl mx-auto leading-relaxed">
             Vive momentos únicos e inolvidables en cada Pueblo Mágico. 
-            Experiencias auténticas que conectan con la cultura, tradiciones y corazón de México.
+            Experiencias auténticas que conectan con la cultura de México.
           </p>
         </div>
 
         {/* Experiences Grid */}
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-8">
           {experiences.map((experience, index) => (
-            <Card key={index} className="overflow-hidden hover-lift shadow-elegant reveal-on-scroll">
+            <Card key={index} className="overflow-hidden border-0 rounded-[2.5rem] shadow-2xl hover:translate-y-[-8px] transition-smooth reveal-on-scroll group bg-white">
               <div className="grid md:grid-cols-5 h-full">
                 {/* Image */}
-                <div className="md:col-span-2 relative h-64 md:h-auto">
+                <div className="md:col-span-2 relative h-64 md:h-auto overflow-hidden">
                   <img 
                     src={experience.image} 
                     alt={experience.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   
                   {/* Rating Badge */}
-                  <div className="absolute top-4 left-4 bg-background/90 backdrop-blur-sm px-3 py-1 rounded-full flex items-center space-x-1">
-                    <Star size={14} className="text-gold fill-gold" />
-                    <span className="text-sm font-semibold">{experience.rating}</span>
+                  <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-full flex items-center space-x-2 shadow-lg">
+                    <Star size={14} className="text-primary fill-primary" />
+                    <span className="text-xs font-black text-zinc-900">{experience.rating}</span>
                   </div>
 
                   {/* Location */}
                   <div className="absolute bottom-4 left-4 text-white">
-                    <div className="flex items-center space-x-1">
-                      <MapPin size={16} />
-                      <span className="text-sm font-medium">{experience.location}</span>
+                    <div className="flex items-center space-x-2 bg-black/20 backdrop-blur-md px-3 py-1 rounded-full w-fit">
+                      <MapPin size={14} className="text-primary" />
+                      <span className="text-[10px] font-bold uppercase tracking-widest">{experience.location}</span>
                     </div>
                   </div>
                 </div>
@@ -91,17 +63,17 @@ const ExperiencesSection = () => {
                 <div className="md:col-span-3">
                   <CardContent className="p-8 h-full flex flex-col justify-between">
                     <div>
-                      <div className="flex items-center justify-between mb-4">
-                        <h3 className="text-xl font-heading font-bold text-foreground leading-tight">
+                      <div className="flex flex-col mb-3">
+                        <div className="flex items-center text-primary text-xs font-bold mb-1">
+                          <Calendar size={14} className="mr-2" />
+                          {experience.date}
+                        </div>
+                        <h3 className="text-xl font-black text-zinc-900 leading-tight">
                           {experience.title}
                         </h3>
-                        <div className="flex items-center text-muted-foreground text-sm">
-                          <Clock size={16} className="mr-1" />
-                          {experience.duration}
-                        </div>
                       </div>
 
-                      <p className="text-muted-foreground leading-relaxed mb-6">
+                      <p className="text-zinc-500 leading-relaxed mb-6 text-base line-clamp-3">
                         {experience.description}
                       </p>
 
@@ -110,7 +82,7 @@ const ExperiencesSection = () => {
                         {experience.highlights.map((highlight, idx) => (
                           <span 
                             key={idx}
-                            className="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full font-medium"
+                            className="px-3 py-1 bg-zinc-50 text-zinc-600 text-[10px] rounded-full font-bold uppercase tracking-wider group-hover:bg-primary/10 group-hover:text-primary transition-colors"
                           >
                             {highlight}
                           </span>
@@ -119,9 +91,9 @@ const ExperiencesSection = () => {
                     </div>
 
                     {/* Action Button */}
-                    <Button variant="outline" className="w-full">
+                    <Button variant="outline" className="w-full rounded-full border-zinc-200 py-5 text-sm font-bold group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all duration-300">
                       Ver experiencia completa
-                      <ArrowRight size={16} className="ml-2" />
+                      <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
                     </Button>
                   </CardContent>
                 </div>
@@ -132,15 +104,15 @@ const ExperiencesSection = () => {
 
         {/* Call to Action */}
         <div className="text-center mt-16 reveal-on-scroll">
-          <div className="bg-accent/30 rounded-2xl p-8">
-            <h3 className="text-2xl font-heading font-bold mb-4 text-foreground">
+          <div className="bg-white/50 backdrop-blur-xl rounded-[3rem] p-8 md:p-12 border border-white/50 shadow-xl max-w-4xl mx-auto">
+            <h3 className="text-2xl font-heading font-black mb-4 text-zinc-900 tracking-tight">
               ¿Listo para vivir estas experiencias?
             </h3>
-            <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+            <p className="text-lg text-zinc-600 mb-8 max-w-2xl mx-auto leading-relaxed">
               Descarga Magic Ways y comienza a explorar México de una forma completamente nueva. 
               Cada pueblo tiene historias únicas esperándote.
             </p>
-            <Button size="lg" className="gradient-hero text-white">
+            <Button size="lg" className="rounded-full shadow-mexican px-8 py-6 text-base hover-lift">
               Explorar más experiencias
               <ArrowRight size={20} className="ml-2" />
             </Button>

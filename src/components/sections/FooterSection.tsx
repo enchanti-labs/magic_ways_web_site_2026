@@ -1,5 +1,6 @@
 import { Facebook, Instagram, Twitter, Mail, Phone, MapPin } from 'lucide-react';
 import logoDark from '@/assets/logo-dark.png';
+import { Link } from 'react-router-dom';
 
 const FooterSection = () => {
   const currentYear = new Date().getFullYear();
@@ -8,7 +9,8 @@ const FooterSection = () => {
     { name: 'Inicio', href: '#inicio' },
     { name: 'Destinos', href: '#destinos' },
     { name: 'Beneficios', href: '#beneficios' },
-    { name: 'Experiencias', href: '#experiencias' }
+    { name: 'Experiencias', href: '#experiencias' },
+    { name: 'Blog', href: '/blog' }
   ];
 
   const legalLinks = [
@@ -30,6 +32,8 @@ const FooterSection = () => {
       const element = document.querySelector(href);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        window.location.href = '/' + href;
       }
     }
   };
@@ -41,15 +45,15 @@ const FooterSection = () => {
           {/* Brand Section */}
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
-              <img 
-                src={logoDark} 
+              <img
+                src={logoDark}
                 alt="Magic Ways"
                 className="w-10 h-10"
               />
               <span className="font-heading font-bold text-xl text-foreground">Magic Ways</span>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Conectamos viajeros con la magia de México. Descubre Pueblos Mágicos, 
+              Conectamos viajeros con la magia de México. Descubre Pueblos Mágicos,
               conecta con comercios locales y vive experiencias auténticas.
             </p>
             <div className="flex space-x-4">
@@ -77,22 +81,30 @@ const FooterSection = () => {
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.name}>
-                  <button
-                    onClick={() => scrollToSection(link.href)}
-                    className="text-muted-foreground hover:text-primary transition-colors text-sm"
-                  >
-                    {link.name}
-                  </button>
+                  {link.href.startsWith('/') ? (
+                    <Link
+                      to={link.href}
+                      className="text-muted-foreground hover:text-primary transition-colors text-sm"
+                    >
+                      {link.name}
+                    </Link>
+                  ) : (
+                    <button
+                      onClick={() => scrollToSection(link.href)}
+                      className="text-muted-foreground hover:text-primary transition-colors text-sm"
+                    >
+                      {link.name}
+                    </button>
+                  )}
                 </li>
               ))}
               <li>
-                <a 
-                  href="#faq" 
+                <button
                   onClick={() => scrollToSection('#faq')}
                   className="text-muted-foreground hover:text-primary transition-colors text-sm"
                 >
                   FAQ
-                </a>
+                </button>
               </li>
             </ul>
           </div>
@@ -109,8 +121,8 @@ const FooterSection = () => {
               </div>
               <div className="flex items-center space-x-3 text-sm text-muted-foreground">
                 <Phone size={16} className="text-primary flex-shrink-0" />
-                <a href="tel:+525512345678" className="hover:text-primary transition-colors">
-                  +52 55 1234 5678
+                <a href="tel:+525560905620" className="hover:text-primary transition-colors">
+                  +52 55 6090 5620
                 </a>
               </div>
               <div className="flex items-start space-x-3 text-sm text-muted-foreground">
@@ -147,18 +159,13 @@ const FooterSection = () => {
             <div className="text-sm text-muted-foreground">
               © {currentYear} Magic Ways. Todos los derechos reservados.
             </div>
-            
+
             {/* Enchanti Labs Link - Large and Centered */}
             <div className="flex flex-col items-center space-y-2">
               <span className="text-xs text-muted-foreground">Desarrollado por</span>
-              <a
-                href="https://enchant-labs-tech-showcase.lovable.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-lg font-semibold text-primary hover:text-primary/80 transition-all duration-300 hover:scale-105 text-center"
-              >
+              <span className="text-lg font-semibold text-primary text-center">
                 Enchanti Labs
-              </a>
+              </span>
             </div>
           </div>
         </div>

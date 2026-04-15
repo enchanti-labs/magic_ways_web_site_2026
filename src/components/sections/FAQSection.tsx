@@ -34,31 +34,32 @@ const FAQSection = () => {
   };
 
   return (
-    <section id="faq" className="py-24 bg-background reveal-on-scroll">
+    <section id="faq" className="py-16 md:py-24 bg-[#fffbf0] rounded-b-[60px] md:rounded-b-[100px] relative z-50 overflow-hidden reveal-on-scroll">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-heading font-bold text-foreground mb-6">
-            Preguntas Frecuentes
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-6xl font-heading font-black text-zinc-900 mb-6 leading-tight">
+            Preguntas <br />
+            <span className="text-primary italic">Frecuentes</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Resolvemos las dudas más comunes sobre Magic Ways y cómo puedes aprovechar al máximo tu experiencia en los Pueblos Mágicos.
+          <p className="text-lg md:text-xl text-zinc-600 max-w-3xl mx-auto leading-relaxed font-medium">
+            Resolvemos las dudas más comunes sobre Magic Ways y cómo aprovechar al máximo tu experiencia.
           </p>
         </div>
 
         <div className="max-w-4xl mx-auto space-y-4">
           {faqs.map((faq, index) => (
-            <Card key={index} className="overflow-hidden transition-smooth hover:shadow-md">
-              <CardContent className="p-0">
+            <Card key={index} className="border-0 rounded-[2rem] shadow-xl hover:shadow-2xl transition-all duration-300 bg-white overflow-hidden">
+              <CardContent className="p-1">
                 <button
                   onClick={() => toggleItem(index)}
-                  className="w-full p-6 text-left flex items-center justify-between hover:bg-accent/30 transition-smooth group"
+                  className="w-full p-5 md:p-6 text-left flex items-center justify-between hover:bg-zinc-50/50 transition-smooth group"
                   aria-expanded={openItems.includes(index)}
                   aria-controls={`faq-content-${index}`}
                 >
-                  <span className="text-lg font-semibold text-foreground group-hover:text-primary transition-smooth">
+                  <span className="text-lg md:text-xl font-bold text-zinc-900 group-hover:text-primary transition-colors leading-tight pr-4">
                     {faq.question}
                   </span>
-                  <div className="transition-transform duration-300 text-primary">
+                  <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ${openItems.includes(index) ? 'bg-primary text-white rotate-0' : 'bg-zinc-100 text-zinc-400 -rotate-180'}`}>
                     {openItems.includes(index) ? (
                       <ChevronUp className="h-5 w-5" />
                     ) : (
@@ -75,7 +76,7 @@ const FAQSection = () => {
                       : 'max-h-0 opacity-0'
                   }`}
                 >
-                  <div className="px-6 pb-6 text-muted-foreground leading-relaxed">
+                  <div className="px-6 md:px-8 pb-8 text-zinc-500 text-base md:text-lg leading-relaxed font-medium">
                     {faq.answer}
                   </div>
                 </div>

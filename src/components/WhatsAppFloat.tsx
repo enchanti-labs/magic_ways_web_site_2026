@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 const WhatsAppFloat = () => {
   const handleWhatsAppClick = () => {
     const message = encodeURIComponent('¡Hola! Me interesa conocer más sobre Magic Ways');
-    const phoneNumber = '5215555555555'; // Replace with actual number
+    const phoneNumber = '5215560905620'; // Replace with actual number
     window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
   };
 
