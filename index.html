@@ -1,35 +1,72 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Magic Ways - Descubre la Magia de México | App Turismo Pueblos Mágicos</title>
+  <title>Magic Ways - Descubre la Magia de México | App de Turismo y Pueblos Mágicos</title>
   <meta name="description"
-    content="Magic Ways conecta turistas con comercios locales en los 177 Pueblos Mágicos de México. Explora destinos auténticos, apoya la economía local y vive experiencias únicas.">
+    content="Magic Ways es la primera súper-app de turismo en México que conecta viajeros con comercios locales en los 177 Pueblos Mágicos. Pide comida local y vive experiencias únicas con ayuda de nuestra IA.">
   <meta name="author" content="Magic Ways" />
   <meta name="keywords"
-    content="turismo México, Pueblos Mágicos, app turismo, comercios locales, experiencias auténticas">
-  <link rel="canonical" href="https://magicways.mx" />
+    content="turismo México, Pueblos Mágicos, app turismo IA, comida local México, experiencias auténticas, guía de viaje inteligencia artificial">
+  <link rel="canonical" href="https://magic-ways.com" />
 
+  <!-- Open Graph / Facebook -->
   <meta property="og:title" content="Magic Ways - Descubre la Magia de México" />
   <meta property="og:description"
-    content="App móvil que conecta turistas con comercios locales en Pueblos Mágicos de México. Más de 170 destinos esperándote." />
+    content="Conecta con la esencia de México. Pide comida local y descubre experiencias auténticas en los Pueblos Mágicos con nuestra IA." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="/logo-dark.png">
+  <meta property="og:image" content="https://magic-ways.com/logo-dark.png">
   <meta property="og:url" content="https://magic-ways.com" />
+  <meta property="og:site_name" content="Magic Ways" />
 
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@MagicWaysMX" />
   <meta name="twitter:title" content="Magic Ways - Descubre la Magia de México" />
   <meta name="twitter:description"
-    content="App móvil que conecta turistas con comercios locales en Pueblos Mágicos de México" />
-  <meta name="twitter:image" content="/logo-dark.png">
+    content="App móvil que conecta turistas con comercios locales y experiencias en Pueblos Mágicos." />
+  <meta name="twitter:image" content="https://magic-ways.com/logo-dark.png">
+
   <link rel="icon" type="image/png" href="/logo-dark.png">
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Magic Ways",
+      "operatingSystem": "iOS, Android",
+      "applicationCategory": "TravelApplication",
+      "description": "App que conecta viajeros con comercios locales en Pueblos Mágicos de México.",
+      "url": "https://magic-ways.com",
+      "author": {
+        "@type": "Organization",
+        "name": "Magic Ways",
+        "url": "https://magic-ways.com"
+      }
+    }
+  </script>
 </head>
 
 <body>
-  <div id="root"></div>
+  <div id="root">
+    <!-- Static content for Search Engines (SSR Fallback) -->
+    <main style="display: none;">
+      <h1>Magic Ways - Descubre la Magia de México</h1>
+      <p>Explora los 177 Pueblos Mágicos, pide comida local y vive experiencias únicas con ayuda de Inteligencia Artificial.</p>
+      <section>
+        <h2>¿Qué es Magic Ways?</h2>
+        <p>La primera súper-app de turismo en México que apoya la economía local conectando a viajeros con los mejores establecimientos.</p>
+        <ul>
+          <li>Explora Pueblos Mágicos</li>
+          <li>Pregunta a nuestra IA viajera</li>
+          <li>Reserva experiencias y comida</li>
+        </ul>
+      </section>
+    </main>
+  </div>
   <script type="module" src="/src/main.tsx"></script>
 </body>
 

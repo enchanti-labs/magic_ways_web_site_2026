@@ -21,15 +21,23 @@ const CTASection = () => {
               <p className="text-lg md:text-xl mb-10 text-zinc-600 leading-relaxed font-medium max-w-xl">
                 Únete a miles de viajeros que ya han descubierto lo más auténtico de México con nuestra app.
               </p>
-              
+
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="rounded-full shadow-mexican px-8 py-6 text-base hover-lift">
-                  <Download className="w-5 h-5 mr-3" />
-                  Descargar App
+                <Button asChild size="lg" className="rounded-full shadow-mexican px-8 py-6 text-base hover-lift w-full sm:w-auto">
+                  <a 
+                    href="https://play.google.com/store/apps/details?id=com.magicways.customers" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
+                    <Download className="w-5 h-5 mr-3" />
+                    Descargar App
+                  </a>
                 </Button>
-                <Button variant="outline" size="lg" className="rounded-full bg-white border-zinc-200 px-8 py-6 text-base hover-lift hover:bg-zinc-50 font-bold text-zinc-900">
-                  <ArrowRight className="w-5 h-5 mr-3 text-primary" />
-                  Saber más
+                <Button asChild variant="outline" size="lg" className="rounded-full bg-white border-zinc-200 px-8 py-6 text-base hover-lift hover:bg-zinc-50 font-bold text-zinc-900 w-full sm:w-auto">
+                  <a href="#">
+                    <ArrowRight className="w-5 h-5 mr-3 text-primary" />
+                    Saber más
+                  </a>
                 </Button>
               </div>
             </div>
@@ -38,8 +46,8 @@ const CTASection = () => {
             <div className="flex justify-center lg:justify-end">
               <div className="relative group">
                 <div className="absolute inset-0 bg-primary/20 blur-[100px] rounded-full opacity-40 group-hover:opacity-60 transition-opacity" />
-                <img 
-                  src={phoneInHand} 
+                <img
+                  src={phoneInHand}
                   alt="Magic Ways App en smartphone"
                   className="max-w-sm w-full h-auto drop-shadow-[0_45px_45px_rgba(0,0,0,0.25)] relative z-10 animate-float"
                 />

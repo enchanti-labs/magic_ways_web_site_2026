@@ -21,13 +21,7 @@ const Navbar = () => {
 
   const navItems = [
     { name: 'Inicio', href: '#inicio' },
-    { name: 'Destinos', href: '#destinos' },
-    { name: 'Beneficios', href: '#beneficios' },
-    { name: 'Estadísticas', href: '#estadisticas' },
-    { name: 'Experiencias', href: '#experiencias' },
-    { name: 'FAQ', href: '#faq' },
-    { name: 'Blog', href: '/blog' },
-    { name: 'Contacto', href: '#contacto' }
+    { name: 'Blog', href: '/blog' }
   ];
 
   const scrollToSection = (href: string) => {

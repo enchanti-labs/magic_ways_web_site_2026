@@ -36,16 +36,16 @@ const AboutSection = () => {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-[#fffbf0] rounded-b-[60px] md:rounded-b-[100px] overflow-hidden">
+    <section className="py-12 md:py-20 bg-[#fffbf0] rounded-b-[60px] md:rounded-b-[100px] overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="reveal-on-scroll">
-            <h2 className="text-4xl md:text-6xl font-heading font-black mb-6 text-zinc-900 leading-[1.1]">
+            <h2 className="text-3xl md:text-5xl font-heading font-black mb-6 text-zinc-900 leading-[1.1]">
               ¿Qué es <br />
               <span className="text-primary italic">Magic Ways?</span>
             </h2>
-            <p className="text-lg md:text-xl text-zinc-600 mb-10 leading-relaxed max-w-2xl">
+            <p className="text-base md:text-lg text-zinc-600 mb-10 leading-relaxed max-w-2xl">
               Una app móvil innovadora que conecta turistas con la esencia real de México. 
               Explora, chatea y apoya a comercios locales en más de 120 Pueblos Mágicos.
             </p>

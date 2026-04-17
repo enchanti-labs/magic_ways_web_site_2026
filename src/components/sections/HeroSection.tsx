@@ -36,110 +36,82 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section id="inicio" className="relative min-h-[120vh] flex items-center overflow-hidden">
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat" 
+    <section id="inicio" className="relative min-h-screen flex flex-col items-center overflow-hidden bg-white">
+      {/* Background Image with Overlay */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: `url(${heroImage})`,
-          transform: `translateY(${scrollY * 0.3}px)`
-        }} 
-      />
+          transform: `translateY(${scrollY * 0.2}px)`
+        }}
+      >
+        <div className="absolute inset-0 gradient-overlay opacity-90" />
+      </div>
 
-      {/* Overlay */}
-      <div className="absolute inset-0 gradient-overlay opacity-70" />
-
-      {/* Content */}
-      <div className="container relative z-10 mx-auto px-4 pt-20 md:pt-0">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
-          <div className="text-center lg:text-left mb-20 lg:mb-0">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-6 animate-fade-in-up">
-              Conecta con la Magia de México
-            </h1>
-            <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed animate-fade-in-up-delay">
-              Descubre Pueblos Mágicos, conecta con comercios locales y vive experiencias únicas
-            </p>
-
-            {/* Download Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
-              <Button size="lg" className="gradient-hero text-white font-semibold px-8 py-4 rounded-xl hover:scale-105 transition-bounce shadow-mexican">
-                <AppStoreIcon />
-                App Store
-              </Button>
-              <Button size="lg" variant="outline" className="bg-transparent border-2 border-white hover:bg-white font-semibold px-8 py-4 rounded-xl hover:scale-105 transition-bounce text-white hover:!text-primary-dark duration-300">
-                <GooglePlayIcon />
-                Google Play
-              </Button>
-            </div>
-
-            {/* Statistics Bar */}
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 animate-scale-in">
-              <div className="grid grid-cols-3 gap-4 text-center">
-                <div>
-                  <div className="text-2xl font-bold text-white bg-transparent">32</div>
-                  <div className="text-white/80 text-sm">Estados</div>
-                </div>
-                <div>
-                  <div className="text-2xl font-bold text-white">177+</div>
-                  <div className="text-white/80 text-sm">Pueblos Mágicos</div>
-                </div>
-                <div>
-                  <div className="text-2xl font-bold text-white">1K+</div>
-                  <div className="text-white/80 text-sm">Comercios Activos</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Right Content - App Screens Layout */}
-          <div className="relative flex justify-center lg:justify-end items-center h-[500px] md:h-[600px] mt-8 lg:mt-0">
-            {/* Left Back Screen */}
+      {/* Main Content Grid */}
+      <div className="container relative z-10 mx-auto px-4 flex-grow flex items-center pt-12 md:pt-0">
+        <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
+          {/* Left: App Screens */}
+          <div className="relative flex justify-center lg:justify-start items-center h-[400px] md:h-[600px] order-2 lg:order-1">
             <div 
-              className="absolute left-0 md:left-auto md:right-[40%] w-40 md:w-56 h-auto transition-transform duration-200 ease-out z-0"
-              style={{ transform: `translateY(${scrollY * 0.15}px) rotate(-8deg) translateX(-10%)` }}
-            >
-              <img
-                src={appScreenLeft}
-                alt="Merchant Detail"
-                className="w-full h-auto rounded-[2.5rem] shadow-2xl border-4 border-white/20 backdrop-blur-sm"
-              />
-            </div>
-
-            {/* Right Back Screen */}
-            <div 
-              className="absolute right-0 md:right-0 w-40 md:w-56 h-auto transition-transform duration-200 ease-out z-0"
-              style={{ transform: `translateY(${scrollY * 0.25}px) rotate(8deg) translateX(10%)` }}
-            >
-              <img
-                src={appScreenRight}
-                alt="Destination Detail"
-                className="w-full h-auto rounded-[2.5rem] shadow-2xl border-4 border-white/20 backdrop-blur-sm"
-              />
-            </div>
-
-            {/* Center Front Screen */}
-            <div 
-              className="relative w-48 md:w-64 h-auto transition-transform duration-100 ease-out z-10"
+              className="absolute left-0 md:left-20 w-48 md:w-64 z-10 transition-transform duration-300"
               style={{ transform: `translateY(${scrollY * -0.05}px)` }}
             >
               <img
                 src={appScreenCenter}
-                alt="Explore Mexico App"
-                className="w-full h-auto rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.5)] border-4 border-white"
+                alt="Magic Ways App"
+                className="w-full h-auto rounded-[3rem] shadow-[0_30px_60px_rgba(0,0,0,0.5)] border-4 border-white/20"
               />
+            </div>
+            <div 
+              className="absolute left-20 md:left-48 w-44 md:w-60 blur-[1px] opacity-80 z-0"
+              style={{ transform: `translateY(${scrollY * 0.1}px) rotate(5deg)` }}
+            >
+              <img
+                src={appScreenRight}
+                alt="Map View"
+                className="w-full h-auto rounded-[3rem] shadow-2xl border-4 border-white/10"
+              />
+            </div>
+          </div>
+
+          {/* Right: Text Content */}
+          <div className="text-center lg:text-left order-1 lg:order-2">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-black text-white mb-6 animate-fade-in-up leading-tight">
+              Conecta con la <br />
+              <span className="italic">Magia de México</span>
+            </h1>
+            <p className="text-lg md:text-xl text-white/90 mb-10 leading-relaxed font-medium max-w-xl animate-fade-in-up-delay">
+              Descubre Pueblos Mágicos, conecta con comercios locales y vive experiencias únicas
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in-up-delay">
+              <Button asChild size="lg" className="bg-primary hover:bg-primary-light text-white font-bold px-10 py-7 rounded-full transition-bounce shadow-mexican text-lg flex items-center w-full sm:w-auto">
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                  <AppStoreIcon />
+                  App Store
+                </a>
+              </Button>
+              <Button asChild size="lg" className="bg-primary hover:bg-primary-light text-white font-bold px-10 py-7 rounded-full transition-bounce shadow-mexican text-lg flex items-center w-full sm:w-auto">
+                <a 
+                  href="https://play.google.com/store/apps/details?id=com.magicways.customers" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  <GooglePlayIcon />
+                  Google Play
+                </a>
+              </Button>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Logo at the bottom center */}
-      <div className="absolute bottom-6 inset-x-0 flex justify-center z-10">
-        <img
-          src={logoWhiteWithText}
-          alt="Magic Ways"
-          className="h-16 md:h-20 w-auto animate-fade-in-up"
-        />
+      {/* Wave Separator - More Pronounced */}
+      <div className="wave-separator">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5,73.84-4.36,147.54,16.88,218.2,35.26,69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" transform="translate(0 120) scale(1 -1)"></path>
+        </svg>
       </div>
     </section>
   );

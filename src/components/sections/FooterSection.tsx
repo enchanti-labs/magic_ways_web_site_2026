@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Twitter, Mail, Phone, MapPin } from 'lucide-react';
+import { Facebook, Instagram, Twitter, Mail, Phone, MapPin, Play, Download } from 'lucide-react';
 import logoDark from '@/assets/logo-dark.png';
 import { Link } from 'react-router-dom';
 
@@ -7,9 +7,6 @@ const FooterSection = () => {
 
   const quickLinks = [
     { name: 'Inicio', href: '#inicio' },
-    { name: 'Destinos', href: '#destinos' },
-    { name: 'Beneficios', href: '#beneficios' },
-    { name: 'Experiencias', href: '#experiencias' },
     { name: 'Blog', href: '/blog' }
   ];
 
@@ -72,6 +69,21 @@ const FooterSection = () => {
                   </a>
                 );
               })}
+            </div>
+            
+            {/* App Badges in Footer */}
+            <div className="pt-4 space-y-3">
+              <span className="text-xs font-bold text-muted-foreground uppercase tracking-widest">Descarga la App</span>
+              <div className="flex flex-col space-y-2">
+                <a href="https://play.google.com/store/apps/details?id=com.magicways.customers" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 bg-zinc-900 rounded-xl text-white text-xs font-bold hover:bg-primary transition-colors w-max">
+                  <Play size={14} className="fill-current" />
+                  Google Play
+                </a>
+                <a href="#" className="inline-flex items-center gap-2 px-4 py-2 bg-zinc-900 rounded-xl text-white text-xs font-bold hover:bg-primary transition-colors w-max opacity-50 cursor-not-allowed">
+                  <Download size={14} />
+                  App Store
+                </a>
+              </div>
             </div>
           </div>
 

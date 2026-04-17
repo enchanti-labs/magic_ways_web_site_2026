@@ -2,14 +2,13 @@ import { useEffect } from 'react';
 import Navbar from './Navbar';
 import WhatsAppFloat from './WhatsAppFloat';
 import HeroSection from './sections/HeroSection';
-import AboutSection from './sections/AboutSection';
+import TrustedBySection from './sections/TrustedBySection';
+import FeaturesSection from './sections/FeaturesSection';
+import TestimonialsSection from './sections/TestimonialsSection';
 import DestinationsSection from './sections/DestinationsSection';
-import BenefitsSection from './sections/BenefitsSection';
-import StatsSection from './sections/StatsSection';
-import ExperiencesSection from './sections/ExperiencesSection';
-import HowItWorksSection from './sections/HowItWorksSection';
 import FAQSection from './sections/FAQSection';
 import CTASection from './sections/CTASection';
+import StatsSection from './sections/StatsSection';
 import FooterSection from './sections/FooterSection';
 
 const MagicWaysLanding = () => {
@@ -36,19 +35,25 @@ const MagicWaysLanding = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-white relative overflow-hidden">
+      {/* Global Background Blobs */}
+      <div className="bg-blob blob-primary w-[600px] h-[600px] -top-20 -right-20" />
+      <div className="bg-blob blob-gold w-[500px] h-[500px] top-[20%] -left-20" />
+      <div className="bg-blob blob-cyan w-[700px] h-[700px] top-[40%] -right-40" />
+      <div className="bg-blob blob-magenta w-[600px] h-[600px] top-[60%] -left-40 opacity-10" />
+      <div className="bg-blob blob-primary w-[800px] h-[800px] bottom-0 -right-20" />
+
       {/* Fixed Navigation */}
       <Navbar />
-      
+
       {/* Main Content */}
-      <main>
+      <main className="relative z-10">
         <HeroSection />
-        <AboutSection />
+        <TrustedBySection />
+        <FeaturesSection />
+        <TestimonialsSection />
         <DestinationsSection />
-        <BenefitsSection />
         <StatsSection />
-        <ExperiencesSection />
-        <HowItWorksSection />
         <FAQSection />
         <CTASection />
       </main>

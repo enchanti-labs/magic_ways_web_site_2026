@@ -13,57 +13,56 @@ const DestinationsSection = () => {
     image: town.thumbnail || "/placeholder.svg"
   }));
   return (
-    <section id="destinos" className="py-16 md:py-24 bg-[#eafcff] rounded-b-[60px] md:rounded-b-[100px] relative z-20">
+    <section id="destinos" className="py-24 bg-white relative overflow-hidden">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center mb-12 reveal-on-scroll">
+        <div className="text-center mb-16 reveal-on-scroll">
           <h2 className="text-4xl md:text-6xl font-heading font-black mb-6 text-zinc-900 leading-tight">
             Explora México <br />
             <span className="text-primary italic">pueblo por pueblo</span>
           </h2>
-          <p className="text-lg md:text-xl text-zinc-600 max-w-3xl mx-auto mb-10 leading-relaxed">
-            Descubre la riqueza cultural de México a través de sus Pueblos Mágicos. 
-            Cada destino cuenta una historia única llena de tradiciones y sabores.
-          </p>
-          <Link to="/destinos">
-            <Button size="lg" className="rounded-full shadow-mexican px-10 py-6 text-base hover-lift">
-              Ver todos los destinos
-              <ArrowRight size={20} className="ml-2" />
-            </Button>
-          </Link>
         </div>
 
-        {/* Featured Destinations */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {destinations.map((destination, index) => (
-            <Card key={index} className="overflow-hidden border-0 rounded-[2.5rem] shadow-2xl hover:translate-y-[-8px] transition-smooth reveal-on-scroll group bg-white h-full flex flex-col">
-              <div className="relative h-60 overflow-hidden">
+        {/* Featured Destinations - Horizontal Scroll style in grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {destinations.slice(0, 4).map((destination, index) => (
+            <Card key={index} className="overflow-hidden border-0 rounded-[2.5rem] shadow-elegant hover:translate-y-[-10px] transition-smooth reveal-on-scroll group bg-white">
+              <div className="relative h-64 overflow-hidden">
                 <img 
                   src={destination.image} 
                   alt={destination.name}
                   className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80" />
+                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors" />
                 <div className="absolute bottom-6 left-6 text-white">
-                  <div className="flex items-center mb-2 bg-white/20 backdrop-blur-md px-3 py-1 rounded-full w-fit">
-                    <MapPin size={12} className="mr-1 text-primary" />
-                    <span className="text-[10px] font-bold uppercase tracking-wider">{destination.state}</span>
-                  </div>
-                  <h3 className="font-black text-xl tracking-tight">{destination.name}</h3>
+                  <h3 className="font-black text-2xl drop-shadow-md italic">{destination.name}</h3>
                 </div>
               </div>
-              <CardContent className="p-6 flex flex-col flex-grow">
-                <p className="text-zinc-500 text-base mb-6 line-clamp-2 leading-relaxed flex-grow">{destination.description}</p>
+              <CardContent className="p-6">
+                <p className="text-zinc-500 text-sm mb-6 line-clamp-2 leading-relaxed">{destination.description}</p>
                 <Link to={`/destinos/${destination.name.toLowerCase().replace(/\s+/g, '-')}`}>
-                  <Button variant="outline" className="w-full rounded-full border-zinc-200 py-5 text-sm font-bold group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all duration-300">
-                    Explorar destino
-                    <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
+                  <Button className="w-full rounded-2xl bg-primary hover:bg-primary-light py-6 text-sm font-bold shadow-mexican">
+                    Explorar destino &gt;
                   </Button>
                 </Link>
               </CardContent>
             </Card>
           ))}
         </div>
+
+        {/* View All Button */}
+        <div className="mt-16 text-center reveal-on-scroll">
+          <Link to="/destinos">
+            <Button size="lg" className="rounded-full bg-zinc-900 text-white hover:bg-black px-12 py-7 text-lg font-bold shadow-2xl transition-bounce hover-lift">
+              Ver todos los Pueblos Mágicos
+              <ArrowRight className="ml-2" size={20} />
+            </Button>
+          </Link>
+        </div>
+
+        {/* Floating Bubble Accents */}
+        <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-primary/5 rounded-full blur-3xl -z-10" />
+        <div className="absolute -top-20 -right-20 w-64 h-64 bg-gold/5 rounded-full blur-3xl -z-10" />
       </div>
     </section>
   );

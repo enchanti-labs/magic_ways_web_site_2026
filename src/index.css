@@ -19,12 +19,14 @@ All colors MUST be HSL.
     --popover-foreground: 12 6.5% 15.1%;
 
     /* Vibrant Pink Primary Color Palette */
-    --primary: 328 97% 46%; /* Vibrant Pink #E6037C */
+    --primary: 328 97% 46%;
+    /* Vibrant Pink #E6037C */
     --primary-foreground: 0 0% 100%;
     --primary-light: 328 97% 56%;
     --primary-dark: 328 97% 36%;
 
-    --secondary: 180 70% 45%; /* Teal/Cyan for contrast */
+    --secondary: 180 70% 45%;
+    /* Teal/Cyan for contrast */
     --secondary-foreground: 0 0% 100%;
 
     --muted: 328 20% 96%;
@@ -43,7 +45,7 @@ All colors MUST be HSL.
     /* Mexican Culture Inspired Colors */
     --gold: 45 93% 58%;
     --gold-foreground: 12 6.5% 15.1%;
-    
+
     --emerald: 158 64% 52%;
     --emerald-foreground: 0 0% 100%;
 
@@ -51,7 +53,7 @@ All colors MUST be HSL.
     --gradient-hero: linear-gradient(135deg, hsl(328 97% 46%) 0%, hsl(328 97% 56%) 100%);
     --gradient-mexican: linear-gradient(135deg, hsl(328 97% 46%) 0%, hsl(180 70% 45%) 50%, hsl(280 70% 55%) 100%);
     --gradient-overlay: linear-gradient(135deg, rgba(230, 3, 124, 0.9) 0%, rgba(0, 0, 0, 0.6) 100%);
-    
+
     /* Shadows */
     --shadow-mexican: 0 10px 30px -5px hsl(328 97% 46% / 0.3);
     --shadow-elegant: 0 4px 20px -2px hsl(0 0% 0% / 0.1);
@@ -96,7 +98,8 @@ All colors MUST be HSL.
     --popover-foreground: 0 0% 98%;
 
     /* Keep primary colors consistent in dark mode */
-    --primary: 328 97% 52%; /* Slightly brighter pink for dark mode */
+    --primary: 328 97% 52%;
+    /* Slightly brighter pink for dark mode */
     --primary-foreground: 0 0% 100%;
     --primary-light: 328 97% 62%;
     --primary-dark: 328 97% 42%;
@@ -120,7 +123,7 @@ All colors MUST be HSL.
     /* Mexican colors in dark mode */
     --gold: 45 93% 62%;
     --gold-foreground: 12 6.5% 15.1%;
-    
+
     --emerald: 158 64% 58%;
     --emerald-foreground: 12 6.5% 15.1%;
 
@@ -146,7 +149,12 @@ All colors MUST be HSL.
     font-family: var(--font-body);
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-heading);
   }
 }
@@ -156,11 +164,11 @@ All colors MUST be HSL.
   .gradient-hero {
     background: var(--gradient-hero);
   }
-  
+
   .gradient-mexican {
     background: var(--gradient-mexican);
   }
-  
+
   .gradient-overlay {
     background: var(--gradient-overlay);
   }
@@ -168,11 +176,11 @@ All colors MUST be HSL.
   .shadow-mexican {
     box-shadow: var(--shadow-mexican);
   }
-  
+
   .shadow-elegant {
     box-shadow: var(--shadow-elegant);
   }
-  
+
   .shadow-card {
     box-shadow: var(--shadow-card);
   }
@@ -180,7 +188,7 @@ All colors MUST be HSL.
   .transition-smooth {
     transition: var(--transition-smooth);
   }
-  
+
   .transition-bounce {
     transition: var(--transition-bounce);
   }
@@ -210,7 +218,7 @@ All colors MUST be HSL.
   .hover-lift {
     transition: var(--transition-smooth);
   }
-  
+
   .hover-lift:hover {
     transform: translateY(-8px);
     box-shadow: var(--shadow-mexican);
@@ -227,6 +235,36 @@ All colors MUST be HSL.
     opacity: 1;
     transform: translateY(0);
   }
+
+  /* Redesigned Background Shapes */
+  .bg-blob {
+    @apply absolute -z-10 rounded-full blur-[120px] opacity-20 animate-pulse;
+  }
+
+  .blob-primary { @apply bg-primary; }
+  .blob-gold { @apply bg-gold; }
+  .blob-cyan { @apply bg-secondary; }
+  .blob-magenta { @apply bg-primary opacity-10; }
+
+  .wave-separator {
+    @apply absolute bottom-0 left-0 w-full overflow-hidden leading-[0] fill-white;
+  }
+
+  .wave-separator svg {
+    @apply relative block w-[calc(100%+1.3px)] h-[120px];
+  }
+
+  /* Marquee Animation */
+  .animate-marquee {
+    display: flex;
+    width: max-content;
+    animation: marquee 30s linear infinite;
+  }
+
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
 }
 
 @keyframes fadeInUp {
@@ -237,9 +275,12 @@ All colors MUST be HSL.
 }
 
 @keyframes float {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-20px);
   }
@@ -250,6 +291,7 @@ All colors MUST be HSL.
     transform: scale(0.95);
     opacity: 0;
   }
+
   to {
     transform: scale(1);
     opacity: 1;
@@ -257,9 +299,12 @@ All colors MUST be HSL.
 }
 
 @keyframes pulse-mexican {
-  0%, 100% {
+
+  0%,
+  100% {
     box-shadow: 0 0 0 0 hsl(0 72% 51% / 0.7);
   }
+
   50% {
     box-shadow: 0 0 0 20px hsl(0 72% 51% / 0);
   }
