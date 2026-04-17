@@ -70,7 +70,7 @@ const FooterSection = () => {
                 );
               })}
             </div>
-            
+
             {/* App Badges in Footer */}
             <div className="pt-4 space-y-3">
               <span className="text-xs font-bold text-muted-foreground uppercase tracking-widest">Descarga la App</span>
@@ -170,14 +170,6 @@ const FooterSection = () => {
           <div className="flex flex-col items-center space-y-4">
             <div className="text-sm text-muted-foreground">
               © {currentYear} Magic Ways. Todos los derechos reservados.
-            </div>
-
-            {/* Enchanti Labs Link - Large and Centered */}
-            <div className="flex flex-col items-center space-y-2">
-              <span className="text-xs text-muted-foreground">Desarrollado por</span>
-              <span className="text-lg font-semibold text-primary text-center">
-                Enchanti Labs
-              </span>
             </div>
           </div>
         </div>

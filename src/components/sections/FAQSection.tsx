@@ -12,28 +12,20 @@ const FAQSection = () => {
     },
     {
       question: '¿Soy comerciante, cómo puedo registrar mi negocio?',
-      answer: '¡Es muy sencillo! Puedes hacer clic en el botón "Registrar Negocio" en nuestro menú superior o contactarnos directamente. Ofrecemos herramientas digitales para que gestiones tu inventario, reservas y visibilidad sin complicaciones.'
+      answer: '¡Es muy sencillo! Puedes hacer clic en el botón "Registrar Negocio" en nuestro menú superior o contactarnos directamente. Ofrecemos herramientas digitales para que gestiones tu inventario y visibilidad sin complicaciones.'
     },
     {
       question: '¿La app tiene algún costo para el viajero?',
-      answer: (
-        <span>
-          Magic Ways es 100% gratuita para <a href="https://play.google.com/store/apps/details?id=com.magicways.customers" target="_blank" rel="noopener noreferrer" className="text-primary font-bold hover:underline">descargar y explorar</a>. No cobramos comisiones adicionales a los usuarios. Los pagos que realices van directamente a los prestadores de servicios locales.
-        </span>
-      )
+      answer: 'Magic Ways es 100% gratuita para descargar y explorar. No cobramos comisiones adicionales a los usuarios. Los pagos que realices van directamente a los prestadores de servicios locales.'
     },
     {
       question: '¿Qué tipo de servicios puedo encontrar?',
       answer: 'Desde hoteles boutique y hostales acogedores hasta experiencias de turismo de aventura, artesanías únicas y la mejor gastronomía local certificada en cada destino.'
-    },
-    {
-      question: '¿Cómo garantizan la autenticidad de los negocios?',
-      answer: 'Trabajamos de la mano con las autoridades locales y realizamos un proceso de verificación para asegurar que cada comercio listado mantenga los estándares de calidad y autenticidad que definen a un Pueblo Mágico.'
     }
   ];
 
   const toggleItem = (index: number) => {
-    setOpenItems(prev => 
+    setOpenItems(prev =>
       prev.includes(index) ? prev.filter(item => item !== index) : [...prev, index]
     );
   };
@@ -53,8 +45,8 @@ const FAQSection = () => {
 
           <div className="space-y-4">
             {faqs.map((faq, index) => (
-              <Card 
-                key={index} 
+              <Card
+                key={index}
                 className={`border-zinc-100 shadow-sm transition-all duration-300 rounded-[2rem] overflow-hidden ${openItems.includes(index) ? 'ring-2 ring-primary/10 border-primary/20 bg-white' : 'bg-zinc-50/50 hover:bg-white hover:shadow-md'}`}
               >
                 <CardContent className="p-0">
@@ -69,11 +61,10 @@ const FAQSection = () => {
                       {openItems.includes(index) ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
                     </div>
                   </button>
-                  
-                  <div 
-                    className={`transition-all duration-500 ease-in-out overflow-hidden ${
-                      openItems.includes(index) ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-                    }`}
+
+                  <div
+                    className={`transition-all duration-500 ease-in-out overflow-hidden ${openItems.includes(index) ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                      }`}
                   >
                     <div className="px-6 pb-8 text-zinc-500 text-lg md:text-xl leading-relaxed font-medium border-t border-zinc-50 pt-4">
                       {faq.answer}

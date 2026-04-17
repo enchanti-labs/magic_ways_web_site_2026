@@ -8,6 +8,11 @@ import Navbar from '@/components/Navbar';
 import FooterSection from '@/components/sections/FooterSection';
 import WhatsAppFloat from '@/components/WhatsAppFloat';
 
+import dashboardDesktop from '@/assets/commerce-laptop-mockup.png';
+import dashboardMobile from '@/assets/commerce-smartphone-mockup.png';
+import menuAppMockup from '@/assets/commerce-menu-app.png';
+import browserMenuVideo from '@/assets/browser-menu.mov';
+
 const RegisterBusiness = () => {
   const [scrollY, setScrollY] = useState(0);
 
@@ -38,14 +43,16 @@ const RegisterBusiness = () => {
       description: 'Genera un código QR único para que tus clientes accedan a tu menú o catálogo digital al instante. Olvida los costos de impresión y actualiza tus precios en tiempo real.',
       bg: 'bg-[#fffbf0]',
       accent: 'text-orange-600',
-      image: 'https://images.unsplash.com/photo-1595246140625-573b715d11dc?q=80&w=800'
+      customMedia: true,
+      image: ''
     },
     {
       icon: MessageSquare,
-      title: 'Chat Directo con Clientes',
-      description: 'Conéctate directamente con turistas y locales. Resuelve dudas, reserva mesas o personaliza pedidos a través de un chat integrado fácil de usar.',
+      title: 'Recibe pedidos y chatea con clientes',
+      description: 'Recibe pedidos de comida, artesanías o servicios de forma organizada. Notificaciones en tiempo real para que nunca pierdas una venta.',
       bg: 'bg-[#ffeef5]',
       accent: 'text-pink-600',
+      customMedia: false,
       image: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=800'
     },
     {
@@ -54,6 +61,7 @@ const RegisterBusiness = () => {
       description: 'Recibe y gestiona pedidos de comida, artesanías o servicios de forma organizada. Notificaciones en tiempo real para que nunca pierdas una venta.',
       bg: 'bg-[#eafcff]',
       accent: 'text-cyan-600',
+      customMedia: false,
       image: 'https://images.unsplash.com/photo-1556740758-90de374c12ad?q=80&w=800'
     },
     {
@@ -62,6 +70,7 @@ const RegisterBusiness = () => {
       description: 'Tu negocio aparecerá destacado en el mapa de Magic Ways ante miles de turistas de todo el mundo que están explorando los Pueblos Mágicos.',
       bg: 'bg-[#f2f3ff]',
       accent: 'text-indigo-600',
+      customMedia: false,
       image: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?q=80&w=800'
     }
   ];
@@ -93,44 +102,63 @@ const RegisterBusiness = () => {
       <Navbar />
 
       {/* Hero Section - Deep Dark Style */}
-      <header className="relative min-h-[80vh] flex items-center pt-24 overflow-hidden bg-[#0d0d0d]">
+      <header className="relative min-h-[90vh] flex items-center pt-24 pb-12 overflow-hidden bg-[#0d0d0d]">
         <div className="container relative z-10 mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="text-center lg:text-left">
               <Badge className="mb-4 bg-primary/20 text-primary border-primary/30 px-5 py-1.5 text-xs font-semibold rounded-full uppercase tracking-wider">
-                Transformación Digital para Negocios
+                Panel de Control de Comerciante
               </Badge>
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-black mb-6 leading-[1.1] text-white animate-fade-in-up">
-                Escala tu <br />
-                <span className="text-primary italic">Negocio Local</span>
+                Impulsa tu <br />
+                <span className="text-primary italic text-shadow-glow">Crecimiento Digital</span>
               </h1>
               <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto lg:mx-0 mb-10 animate-fade-in-up-delay">
                 Magic Ways es el aliado digital de los comerciantes en México.
-                Gestiona pedidos, menú y visibilidad global en una sola plataforma.
+                Gestiona pedidos, menú y visibilidad global en una sola plataforma robusta y fácil de usar.
               </p>
               <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 animate-fade-in-up-delay">
                 <a href="#planes">
-                  <Button size="lg" className="bg-primary text-white hover:bg-primary/90 shadow-mexican rounded-full w-full sm:w-auto px-8">
+                  <Button size="lg" className="bg-primary text-white hover:bg-primary/90 shadow-mexican rounded-full w-full sm:w-auto px-8 py-6 text-lg">
                     Ver Planes
                   </Button>
                 </a>
-                <Button size="lg" variant="outline" className="bg-transparent text-white border-white/20 hover:bg-white/10 rounded-full w-full sm:w-auto px-8">
-                  Agendar Demo
-                </Button>
               </div>
             </div>
 
-            {/* Mockup Floating Area */}
-            <div className="relative hidden lg:block animate-float">
-              <div className="relative z-10 bg-white/5 backdrop-blur-2xl rounded-[3rem] p-4 border border-white/10 shadow-2xl overflow-hidden max-w-sm mx-auto">
+            {/* Comprehensive Devices Mockup */}
+            <div className="relative h-[400px] md:h-[600px] hidden lg:block">
+              {/* Laptop Mockup */}
+              <div className="absolute top-0 right-0 w-[550px] aspect-video animate-float z-10" style={{ animationDuration: '8s' }}>
+                <div className="relative w-full h-full bg-[#1a1a1a] rounded-t-3xl border-x-[12px] border-t-[12px] border-[#2a2a2a] shadow-2xl overflow-hidden">
+                  {/* Laptop Web Browser Header */}
+                  <div className="h-6 bg-[#2a2a2a] flex items-center px-4 gap-1.5">
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#ff5f56]" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#27c93f]" />
+                  </div>
+                  <img
+                    src={dashboardDesktop}
+                    alt="Merchant Control Panel Desktop"
+                    className="w-full h-full object-cover object-top"
+                  />
+                </div>
+                {/* Laptop Base (Minimalist Representation) */}
+                <div className="h-4 bg-[#2a2a2a] w-[105%] -left-[2.5%] relative rounded-b-xl shadow-lg border-t border-white/5" />
+              </div>
+
+              {/* Smartphone Mockup (Overlapping) */}
+              <div className="absolute -bottom-4 right-32 w-56 lg:w-64 animate-float z-20" style={{ animationDuration: '6s', animationDelay: '1s' }}>
                 <img
-                  src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=800"
-                  alt="Magic Ways App Mockup"
-                  className="rounded-[2.5rem] w-full"
+                  src={dashboardMobile}
+                  alt="Merchant App Mobile View"
+                  className="w-full h-auto rounded-[3rem] shadow-[0_30px_60px_rgba(0,0,0,0.5)] border-4 border-white/20"
                 />
               </div>
-              <div className="absolute -top-10 -right-10 w-40 h-40 bg-primary/30 blur-3xl rounded-full" />
-              <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-secondary/30 blur-3xl rounded-full" />
+
+              {/* Background Accents */}
+              <div className="absolute -top-10 -right-10 w-64 h-64 bg-primary/20 blur-[100px] rounded-full -z-10 animate-pulse" />
+              <div className="absolute -bottom-10 left-20 w-80 h-80 bg-secondary/10 blur-[120px] rounded-full -z-10 animate-pulse" style={{ animationDelay: '2s' }} />
             </div>
           </div>
         </div>
@@ -142,12 +170,12 @@ const RegisterBusiness = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="flex flex-col items-center justify-center text-center">
               <Zap className="text-primary mb-3" size={20} />
-              <span className="text-2xl font-black text-zinc-900">+5,000</span>
+              <span className="text-2xl font-black text-zinc-900">499+</span>
               <span className="text-xs text-zinc-500 font-medium uppercase tracking-wider">Negocios</span>
             </div>
             <div className="flex flex-col items-center justify-center text-center">
               <Users className="text-primary mb-3" size={20} />
-              <span className="text-2xl font-black text-zinc-900">+100k</span>
+              <span className="text-2xl font-black text-zinc-900">10k+</span>
               <span className="text-xs text-zinc-500 font-medium uppercase tracking-wider">Usuarios</span>
             </div>
             <div className="flex flex-col items-center justify-center text-center">
@@ -183,17 +211,37 @@ const RegisterBusiness = () => {
                 <p className="text-base md:text-lg text-zinc-600 mb-6 leading-relaxed max-w-xl">
                   {feature.description}
                 </p>
-                <Button variant="outline" className="border-zinc-200 text-zinc-900 rounded-full hover:bg-zinc-900 hover:text-white px-6 py-2 h-12">
-                  Saber más
-                  <ArrowRight size={16} className="ml-2" />
-                </Button>
               </div>
-              <div className="relative">
-                <img
-                  src={feature.image}
-                  alt={feature.title}
-                  className="rounded-[2.5rem] shadow-2xl w-full max-w-xl mx-auto transform hover:scale-105 transition-smooth"
-                />
+              <div className="relative w-full h-full flex items-center justify-center">
+                {(feature as any).customMedia ? (
+                  <div className="relative w-full h-full min-h-[350px] md:min-h-[450px] flex items-center">
+                    {/* Background Image (Large) */}
+                    <div className="absolute right-0 w-[90%] rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.15)] overflow-hidden border-4 border-white/50 bg-white z-10 transition-transform duration-700 hover:scale-[1.02]">
+                      <img
+                        src={menuAppMockup}
+                        alt="Menu App Desktop view"
+                        className="w-full h-auto object-cover"
+                      />
+                    </div>
+                    {/* Overlapping Mobile Video Mockup */}
+                    <div className="absolute bottom-[-10%] left-[-5%] w-44 md:w-56 z-20 transition-transform duration-700 hover:translate-y-[-10px]">
+                      <video
+                        src={browserMenuVideo}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="w-full h-auto object-cover rounded-[2.5rem] shadow-2xl border-4 border-white bg-black aspect-[9/19.5]"
+                      />
+                    </div>
+                  </div>
+                ) : (
+                  <img
+                    src={feature.image}
+                    alt={feature.title}
+                    className="rounded-[2.5rem] shadow-2xl w-full max-w-xl mx-auto transform hover:scale-105 transition-smooth"
+                  />
+                )}
               </div>
             </div>
           </div>
