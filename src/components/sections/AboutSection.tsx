@@ -8,7 +8,7 @@ const AboutSection = () => {
     {
       icon: MapPin,
       title: 'Explora Destinos',
-      description: 'Descubre más de 120 Pueblos Mágicos auténticos con guías locales detalladas.',
+      description: 'Descubre más de 120 Sitios Mágicos auténticos con guías locales detalladas.',
       bg: 'bg-orange-50',
       color: 'text-orange-500'
     },
@@ -47,7 +47,7 @@ const AboutSection = () => {
             </h2>
             <p className="text-base md:text-lg text-zinc-600 mb-10 leading-relaxed max-w-2xl">
               Una app móvil innovadora que conecta turistas con la esencia real de México. 
-              Explora, chatea y apoya a comercios locales en más de 120 Pueblos Mágicos.
+              Explora, chatea y apoya a comercios locales en más de 120 Sitios Mágicos.
             </p>
 
             {/* Features Grid */}

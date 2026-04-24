@@ -43,7 +43,7 @@ const TerminosNegocios = () => {
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">1. Registro como Negocio Afiliado</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
                 Al registrarse como negocio en Magic Ways, acepta estos términos específicos para comercios y 
-                proveedores de servicios en Pueblos Mágicos de México. Su participación ayuda a conectar 
+                proveedores de servicios en Sitios Mágicos de México. Su participación ayuda a conectar 
                 viajeros con experiencias auténticas locales.
               </p>
               <p className="text-gray-700 leading-relaxed">

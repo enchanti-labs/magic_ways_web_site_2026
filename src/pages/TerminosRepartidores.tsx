@@ -43,7 +43,7 @@ const TerminosRepartidores = () => {
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">1. Registro como Repartidor</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
                 Al registrarse como repartidor en Magic Ways, acepta estos términos específicos para 
-                prestadores de servicios de entrega y logística en Pueblos Mágicos de México.
+                prestadores de servicios de entrega y logística en Sitios Mágicos de México.
               </p>
               <p className="text-gray-700 leading-relaxed">
                 Debe ser mayor de edad, contar con documentación vigente y vehículo propio 

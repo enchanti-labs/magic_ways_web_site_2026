@@ -54,7 +54,7 @@ const DestinationsSection = () => {
         <div className="mt-16 text-center reveal-on-scroll">
           <Link to="/destinos">
             <Button size="lg" className="rounded-full bg-zinc-900 text-white hover:bg-black px-12 py-7 text-lg font-bold shadow-2xl transition-bounce hover-lift">
-              Ver todos los Pueblos Mágicos
+              Ver todos los Sitios Mágicos
               <ArrowRight className="ml-2" size={20} />
             </Button>
           </Link>

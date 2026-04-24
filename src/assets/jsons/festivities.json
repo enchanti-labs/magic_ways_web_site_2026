@@ -1370,7 +1370,7 @@
   {
     "townId": "hgo_huasca_52",
     "townName": "Huasca de Ocampo",
-    "name": "Aniversario del Primer Pueblo Mágico",
+    "name": "Aniversario del Primer Sitio Mágico",
     "month": "Octubre",
     "day": "5",
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Prismas_Bas%C3%A1lticos%2C_Huasca_de_Ocampo%2C_Hidalgo%2C_M%C3%A9xico%2C_2013-10-10%2C_DD_30.jpg/640px-Prismas_Bas%C3%A1lticos%2C_Huasca_de_Ocampo%2C_Hidalgo%2C_M%C3%A9xico%2C_2013-10-10%2C_DD_30.jpg",
@@ -2144,7 +2144,7 @@
   {
     "townId": "jal_san_sebastian_65",
     "townName": "San Sebastián del Oeste",
-    "name": "Aniversario como Pueblo Mágico",
+    "name": "Aniversario como Sitio Mágico",
     "month": "Diciembre",
     "day": "1",
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Cerro_de_la_Bufa.jpg/640px-Cerro_de_la_Bufa.jpg",
@@ -2189,7 +2189,7 @@
   {
     "townId": "ags_pabellon_de_hidalgo_174",
     "townName": "Pabellón de Hidalgo",
-    "name": "Pueblo Mágico",
+    "name": "Sitio Mágico",
     "month": "Julio",
     "day": "1",
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Hacienda_San_Blas_Pabellon.jpg/640px-Hacienda_San_Blas_Pabellon.jpg",
@@ -2328,7 +2328,7 @@
     "month": "Octubre",
     "day": "31",
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Templo_Capulalpam.jpg/640px-Templo_Capulalpam.jpg",
-    "description": "Celebración de la elevación a Pueblo Mágico con actividades culturales and artísticas."
+    "description": "Celebración de la elevación a Sitio Mágico con actividades culturales and artísticas."
   },
   {
     "townId": "cam_iaguada_09",
@@ -2342,11 +2342,11 @@
   {
     "townId": "cam_iaguada_09",
     "townName": "Isla Aguada",
-    "name": "Aniversario como Pueblo Mágico",
+    "name": "Aniversario como Sitio Mágico",
     "month": "Diciembre",
     "day": "1",
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Faro_Isla_Aguada.jpg/640px-Faro_Isla_Aguada.jpg",
-    "description": "Celebración del nombramiento oficial como Pueblo Mágico con festivales culturales y gastronómicos."
+    "description": "Celebración del nombramiento oficial como Sitio Mágico con festivales culturales y gastronómicos."
   },
   {
     "townId": "coa_arteaga_22",

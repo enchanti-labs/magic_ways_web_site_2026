@@ -43,7 +43,7 @@ const TerminosClientes = () => {
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">1. Aceptación de los Términos</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
                 Al utilizar los servicios de Magic Ways como cliente, usted acepta estar vinculado por estos términos y condiciones. 
-                Nuestro servicio está diseñado para conectar viajeros con experiencias auténticas en los Pueblos Mágicos de México.
+                Nuestro servicio está diseñado para conectar viajeros con experiencias auténticas en los Sitios Mágicos de México.
               </p>
               <p className="text-gray-700 leading-relaxed">
                 Debe tener al menos 18 años para utilizar nuestros servicios de forma independiente, o contar con 
@@ -57,7 +57,7 @@ const TerminosClientes = () => {
                 Como cliente de Magic Ways, tendrá acceso a:
               </p>
               <ul className="list-disc pl-6 text-gray-700 space-y-2">
-                <li>Búsqueda y descubrimiento de Pueblos Mágicos</li>
+                <li>Búsqueda y descubrimiento de Sitios Mágicos</li>
                 <li>Información detallada sobre destinos y actividades</li>
                 <li>Reservas y conexión con comercios locales</li>
                 <li>Recomendaciones personalizadas basadas en sus preferencias</li>

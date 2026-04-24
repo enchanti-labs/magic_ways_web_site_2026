@@ -30,7 +30,7 @@ const FeaturesSection = () => {
               </div>
               <h3 className="text-2xl font-black mb-2 text-zinc-900 italic">Marketplace Local</h3>
               <p className="text-zinc-500 text-lg leading-relaxed">
-                Conecta con comercios locales en los 177 pueblos mágicos, en diferentes categorías.
+                Conecta con comercios locales en los 177 sitios mágicos, en diferentes categorías.
               </p>
             </div>
 

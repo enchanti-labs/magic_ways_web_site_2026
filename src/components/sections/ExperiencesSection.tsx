@@ -25,7 +25,7 @@ const ExperiencesSection = () => {
             <span className="text-primary italic">Inolvidables</span>
           </h2>
           <p className="text-lg md:text-xl text-zinc-600 max-w-3xl mx-auto leading-relaxed">
-            Vive momentos únicos e inolvidables en cada Pueblo Mágico. 
+            Vive momentos únicos e inolvidables en cada Sitio Mágico. 
             Experiencias auténticas que conectan con la cultura de México.
           </p>
         </div>

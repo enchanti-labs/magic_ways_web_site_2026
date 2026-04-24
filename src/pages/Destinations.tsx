@@ -64,7 +64,7 @@ const Destinations = () => {
             Todos los Destinos
           </h1>
           <p className="text-xl text-white/80 max-w-2xl">
-            Explora los {townsData.length} Pueblos Mágicos de México y descubre la magia en cada rincón del país.
+            Explora los {townsData.length} Sitios Mágicos de México y descubre la magia en cada rincón del país.
           </p>
         </div>
       </header>

@@ -64,7 +64,7 @@ const AvisoLegal = () => {
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">Objeto Social</h2>
               <p className="text-gray-700 leading-relaxed">
                 Magic Ways es una plataforma digital dedicada a conectar viajeros con experiencias auténticas 
-                en los Pueblos Mágicos de México. Facilitamos el descubrimiento de comercios locales, 
+                en los Sitios Mágicos de México. Facilitamos el descubrimiento de comercios locales, 
                 experiencias culturales y servicios turísticos de calidad.
               </p>
             </section>

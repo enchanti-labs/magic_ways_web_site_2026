@@ -16,6 +16,22 @@ import browserMenuVideo from '@/assets/browser-menu.mov';
 const RegisterBusiness = () => {
   const [scrollY, setScrollY] = useState(0);
 
+  const handleWhatsAppContact = (planName?: string) => {
+    const phoneNumber = '5215560905620';
+    let message = '¡Hola! Me gustaría obtener más información sobre cómo registrar mi negocio en Magic Ways.';
+
+    if (planName === 'Plan Trimestral') {
+      message = '¡Hola! Me interesa registrar mi negocio con el Plan Trimestral de Magic Ways.';
+    } else if (planName === 'Plan Anual') {
+      message = '¡Hola! Me interesa registrar mi negocio con el Plan Anual de Magic Ways.';
+    } else if (planName === 'final-cta') {
+      message = '¡Hola! Estoy listo para llevar mi negocio al siguiente nivel con Magic Ways. ¿Cómo empiezo?';
+    }
+
+    const encodedMessage = encodeURIComponent(message);
+    window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY);
@@ -38,22 +54,22 @@ const RegisterBusiness = () => {
 
   const features = [
     {
+      icon: Globe,
+      title: 'Visibilidad Turística Global',
+      description: 'Tu negocio aparecerá en Magic Ways ante miles de turistas de todo el mundo que están explorando México.',
+      bg: 'bg-[#f2f3ff]',
+      accent: 'text-indigo-600',
+      customMedia: false,
+      image: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?q=80&w=800'
+    },
+    {
       icon: QrCode,
       title: 'Menú Digital & QR',
-      description: 'Genera un código QR único para que tus clientes accedan a tu menú o catálogo digital al instante. Olvida los costos de impresión y actualiza tus precios en tiempo real.',
+      description: 'Genera un código QR único para que tus clientes accedan a tu catálogo digital al instante. Olvida los costos de impresión y actualiza tus precios en tiempo real.',
       bg: 'bg-[#fffbf0]',
       accent: 'text-orange-600',
       customMedia: true,
       image: ''
-    },
-    {
-      icon: MessageSquare,
-      title: 'Recibe pedidos y chatea con clientes',
-      description: 'Recibe pedidos de comida, artesanías o servicios de forma organizada. Notificaciones en tiempo real para que nunca pierdas una venta.',
-      bg: 'bg-[#ffeef5]',
-      accent: 'text-pink-600',
-      customMedia: false,
-      image: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=800'
     },
     {
       icon: ShoppingBag,
@@ -63,15 +79,6 @@ const RegisterBusiness = () => {
       accent: 'text-cyan-600',
       customMedia: false,
       image: 'https://images.unsplash.com/photo-1556740758-90de374c12ad?q=80&w=800'
-    },
-    {
-      icon: Globe,
-      title: 'Visibilidad Turística Global',
-      description: 'Tu negocio aparecerá destacado en el mapa de Magic Ways ante miles de turistas de todo el mundo que están explorando los Pueblos Mágicos.',
-      bg: 'bg-[#f2f3ff]',
-      accent: 'text-indigo-600',
-      customMedia: false,
-      image: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?q=80&w=800'
     }
   ];
 
@@ -293,7 +300,11 @@ const RegisterBusiness = () => {
                   </div>
                 </CardContent>
                 <CardFooter className="p-0">
-                  <Button size="lg" className={`w-full rounded-[1.5rem] font-bold ${plan.highlight ? 'bg-primary text-white hover:bg-primary/90' : 'bg-zinc-100 text-zinc-900 hover:bg-zinc-200 border-0'}`}>
+                  <Button
+                    size="lg"
+                    onClick={() => handleWhatsAppContact(plan.name)}
+                    className={`w-full rounded-[1.5rem] font-bold ${plan.highlight ? 'bg-primary text-white hover:bg-primary/90' : 'bg-zinc-100 text-zinc-900 hover:bg-zinc-200 border-0'}`}
+                  >
                     {plan.cta}
                   </Button>
                 </CardFooter>
@@ -309,7 +320,11 @@ const RegisterBusiness = () => {
           <h2 className="text-2xl md:text-4xl font-heading font-black text-white mb-6">
             ¿Listo para llevar tu <br />negocio al siguiente nivel?
           </h2>
-          <Button size="lg" className="bg-white text-primary hover:bg-white/90 rounded-full shadow-2xl px-10 h-14">
+          <Button
+            size="lg"
+            onClick={() => handleWhatsAppContact('final-cta')}
+            className="bg-white text-primary hover:bg-white/90 rounded-full shadow-2xl px-10 h-14"
+          >
             Comenzar hoy mismo
             <ArrowRight size={20} className="ml-2" />
           </Button>

@@ -8,7 +8,7 @@ const FAQSection = () => {
   const faqs = [
     {
       question: '¿En qué pueblos está disponible la app?',
-      answer: 'Magic Ways está presente en los 177 Pueblos Mágicos oficiales de México. Nuestra cobertura abarca los 32 estados, conectando a viajeros con el alma cultural de cada región.'
+      answer: 'Magic Ways está presente en los 177 Sitios Mágicos oficiales de México. Nuestra cobertura abarca los 32 estados, conectando a viajeros con el alma cultural de cada región.'
     },
     {
       question: '¿Soy comerciante, cómo puedo registrar mi negocio?',

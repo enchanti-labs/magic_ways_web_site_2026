@@ -50,7 +50,7 @@ const FooterSection = () => {
               <span className="font-heading font-bold text-xl text-foreground">Magic Ways</span>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Conectamos viajeros con la magia de México. Descubre Pueblos Mágicos,
+              Conectamos viajeros con la magia de México. Descubre Sitios Mágicos,
               conecta con comercios locales y vive experiencias auténticas.
             </p>
             <div className="flex space-x-4">

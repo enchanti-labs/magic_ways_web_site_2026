@@ -9,7 +9,7 @@ const StatsSection = () => {
     },
     {
       number: '177',
-      label: 'Pueblos Mágicos',
+      label: 'Sitios Mágicos',
       icon: MapPin,
     },
     {

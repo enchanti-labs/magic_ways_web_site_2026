@@ -82,7 +82,7 @@ const HeroSection = () => {
               <span className="italic">Magia de México</span>
             </h1>
             <p className="text-lg md:text-xl text-white/90 mb-10 leading-relaxed font-medium max-w-xl animate-fade-in-up-delay">
-              Descubre Pueblos Mágicos, conecta con comercios locales y vive experiencias únicas
+              Descubre Sitios Mágicos, conecta con comercios locales y vive experiencias únicas
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in-up-delay">

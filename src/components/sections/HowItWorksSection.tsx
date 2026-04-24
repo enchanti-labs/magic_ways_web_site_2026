@@ -17,7 +17,7 @@ const HowItWorksSection = () => {
     step: 2,
     icon: Search,
     title: 'Explora destinos y servicios',
-    description: 'Busca Pueblos Mágicos, descubre comercios locales, actividades auténticas y servicios únicos.',
+    description: 'Busca Sitios Mágicos, descubre comercios locales, actividades auténticas y servicios únicos.',
     color: 'bg-gold',
     textColor: 'text-foreground'
   }, {
@@ -37,7 +37,7 @@ const HowItWorksSection = () => {
           <span className="text-primary italic">funciona?</span>
         </h2>
         <p className="text-lg md:text-xl text-zinc-600 max-w-2xl mx-auto leading-relaxed">
-          Comenzar tu aventura por los Pueblos Mágicos de México es muy fácil.
+          Comenzar tu aventura por los Sitios Mágicos de México es muy fácil.
           Solo sigue estos tres simples pasos.
         </p>
       </div>
