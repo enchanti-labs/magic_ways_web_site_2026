@@ -8,7 +8,7 @@ const HowItWorksSection = () => {
     title: 'Descarga la app',
     description: (
       <span>
-        Obtén Magic Ways gratis desde <a href="#" className="underline font-bold hover:text-primary transition-colors">App Store</a> o <a href="https://play.google.com/store/apps/details?id=com.magicways.customers" target="_blank" rel="noopener noreferrer" className="underline font-bold hover:text-primary transition-colors">Google Play</a>. La instalación es rápida y sencilla.
+        Obtén Magic Ways gratis desde <a href="https://apps.apple.com/us/app/magicways/id6757628969" target="_blank" rel="noopener noreferrer" className="underline font-bold hover:text-primary transition-colors">App Store</a> o <a href="https://play.google.com/store/apps/details?id=com.magicways.customers" target="_blank" rel="noopener noreferrer" className="underline font-bold hover:text-primary transition-colors">Google Play</a>. La instalación es rápida y sencilla.
       </span>
     ),
     color: 'bg-primary',

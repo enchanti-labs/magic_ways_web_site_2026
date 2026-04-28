@@ -87,7 +87,7 @@ const HeroSection = () => {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in-up-delay">
               <Button asChild size="lg" className="bg-primary hover:bg-primary-light text-white font-bold px-10 py-7 rounded-full transition-bounce shadow-mexican text-lg flex items-center w-full sm:w-auto">
-                <a href="#" target="_blank" rel="noopener noreferrer">
+                <a href="https://apps.apple.com/us/app/magicways/id6757628969" target="_blank" rel="noopener noreferrer">
                   <AppStoreIcon />
                   App Store
                 </a>

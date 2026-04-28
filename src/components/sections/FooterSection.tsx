@@ -79,7 +79,7 @@ const FooterSection = () => {
                   <Play size={14} className="fill-current" />
                   Google Play
                 </a>
-                <a href="#" className="inline-flex items-center gap-2 px-4 py-2 bg-zinc-900 rounded-xl text-white text-xs font-bold hover:bg-primary transition-colors w-max opacity-50 cursor-not-allowed">
+                <a href="https://apps.apple.com/us/app/magicways/id6757628969" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 bg-zinc-900 rounded-xl text-white text-xs font-bold hover:bg-primary transition-colors w-max">
                   <Download size={14} />
                   App Store
                 </a>
